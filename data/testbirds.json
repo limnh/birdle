@@ -1,0 +1,73 @@
+[{
+    "sci_name": "Sagittarius serpentarius",
+    "com_name": "Secretarybird",
+    "order": "Accipitriformes",
+    "family_com_name": "Secretarybird",
+    "family_sci_name": "Sagittariidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Sagittarius_serpentarius_Sekret%C3%A4r.JPG/440px-Sagittarius_serpentarius_Sekret%C3%A4r.JPG"
+},
+{
+    "sci_name": "Pandion haliaetus",
+    "com_name": "Osprey",
+    "order": "Accipitriformes",
+    "family_com_name": "Osprey",
+    "family_sci_name": "Pandionidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/2010-kabini-osprey.jpg/440px-2010-kabini-osprey.jpg"
+},
+{
+    "sci_name": "Spizaetus ornatus",
+    "com_name": "Ornate Hawk-Eagle",
+    "order": "Accipitriformes",
+    "family_com_name": "Hawks, Eagles, and Kites",
+    "family_sci_name": "Accipitridae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Spizaetus_ornatus_-near_Nazarillo%2C_Loreto_Region%2C_Peru_-captive-8a.jpg/440px-Spizaetus_ornatus_-near_Nazarillo%2C_Loreto_Region%2C_Peru_-captive-8a.jpg"
+},
+{
+    "sci_name": "Branta bernicla",
+    "com_name": "Brant",
+    "order": "Anseriformes",
+    "family_com_name": "Ducks, Geese, and Waterfowl",
+    "family_sci_name": "Anatidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Brent_Goose.jpg/1920px-Brent_Goose.jpg"
+},
+{
+    "sci_name": "Cathartes aura",
+    "com_name": "Turkey Vulture",
+    "order": "Cathartiformes",
+    "family_com_name": "New World Vultures",
+    "family_sci_name": "Cathartidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Eastern_Turkey_Vulture_%28Canada%29.jpg/440px-Eastern_Turkey_Vulture_%28Canada%29.jpg"
+},
+{
+    "sci_name": "Columba livia",
+    "com_name": "Rock Pigeon",
+    "order": "Columbiformes",
+    "family_com_name": "Pigeons and Doves",
+    "family_sci_name": "Columbidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Paloma_brav%C3%ADa_%28Columba_livia%29%2C_Palacio_de_Nymphenburg%2C_M%C3%BAnich%2C_Alemania01.JPG/440px-Paloma_brav%C3%ADa_%28Columba_livia%29%2C_Palacio_de_Nymphenburg%2C_M%C3%BAnich%2C_Alemania01.JPG"
+},
+{
+    "sci_name": "Dacelo novaeguineae",
+    "com_name": "Laughing Kookaburra",
+    "order": "Coraciiformes",
+    "family_com_name": "Kingfishers",
+    "family_sci_name": "Alcedinidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Laughing_kookaburra_dec08_02.jpg/440px-Laughing_kookaburra_dec08_02.jpg"
+},
+{
+    "sci_name": "Caracara plancus",
+    "com_name": "Crested Caracara",
+    "order": "Falconiformes",
+    "family_com_name": "Falcons and Caracaras",
+    "family_sci_name": "Falconidae",
+    "bird_photo": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/70583361/2400"
+},
+{
+    "sci_name": "Tyto alba",
+    "com_name": "Barn Owl",
+    "order": "Strigiformes",
+    "family_com_name": "Barn-Owls",
+    "family_sci_name": "Tytonidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tyto_alba_-British_Wildlife_Centre%2C_Surrey%2C_England-8a_%281%29.jpg/1024px-Tyto_alba_-British_Wildlife_Centre%2C_Surrey%2C_England-8a_%281%29.jpg"
+}
+]
