@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ bird.com_name }} - Details{% endblock %}
+
+{% block body %}
+<h1>{{ bird.com_name}}</h1>
+<h2>{{ bird.sci_name}}</h2>
+
+<ul>
+  <li><b>Order:</b> {{ bird.order }}</li>
+  <li><b>Family Common Name:</b> {{ bird.family_com_name }}</li>
+  <li><b>Family Scientific Name:</b> {{ bird.family_sci_name }}</li>
+</ul>
+
+<img src="{{ bird.bird_photo }}" height="500" alt="hopefully a bird">
+
+{% endblock %}

@@ -15,8 +15,26 @@ app.jinja_env.undefined = StrictUndefined
 @app.route("/")
 def homepage():
     """View homepage."""
+    return render_template("homepage.html")
+
+
+@app.route("/all_birds")
+def all_birds():
+    birds = crud.get_all_birds()
+    return render_template("all_birds.html", birds=birds)
+
+@app.route("/birds/<bird_id>")
+def show_bird(bird_id):
+    """Show details on a particular bird."""
+
+    bird = crud.get_bird(bird_id)
+
+    return render_template("bird_details.html", bird=bird)
+    
+@app.route("/test_answer")
+def test_answer():
     answer = crud.get_answer(date.today())
-    print("Something's happening?")
+    return answer
 
 if __name__ == "__main__":
     connect_to_db(app)

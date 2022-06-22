@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Birdle{% endblock %}
+
+{% block body %}
+<h1>
+    __(.)< __(.)> __(.)=<br>
+    \___)  \___)  \___)<br>
+    Birdle
+</h1>
+
+<h2>Log In</h2>
+<form action="/login" method="POST">
+  <p>
+    Email <input type="text" name="email">
+  </p>
+
+  <p>
+    Password <input type="password" name="password">
+  </p>
+
+  <p>
+    <button type="submit">Log In</button>
+
+  </p>
+</form>
+{% endblock %}
