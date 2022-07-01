@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, Bird, Answer, User, connect_to_db
+from model import db, Bird, Answer, User, Guess, connect_to_db
 
 
 def create_bird(sci_name, com_name, order, family_com_name, family_sci_name, bird_photo):
@@ -23,6 +23,9 @@ def get_bird(bird_id):
 def get_answer(date):
     """Returns answer for given date."""
     return Answer.query.get(date)
+
+def get_full_answer(date):
+    return Bird.query.get(Answer.query.get(date).bird_id)
 
 def create_answer(bird_id, date):
     """Creates an answer."""
@@ -51,6 +54,18 @@ def get_user_by_email(email):
     """Return a user by email."""
 
     return User.query.filter(User.email == email).first()
+
+def create_guess(date, user_id, correct_guess):
+    """Creates a guess."""
+    
+    guess = Guess(date=date, user_id=user_id, correct_guess=correct_guess)
+    return guess
+
+def get_user_guesses(date, user_id):
+    """Get the number of guesses a user has made each day."""
+    
+    user_guesses = Guess.query.filter(Guess.user_id == user_id, Guess.date == date).count()
+    return user_guesses
     
 
 if __name__ == "__main__":

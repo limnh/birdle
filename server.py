@@ -17,7 +17,6 @@ def homepage():
     """View homepage."""
     return render_template("homepage.html")
 
-
 @app.route("/all_birds")
 def all_birds():
     birds = crud.get_all_birds()
@@ -30,11 +29,79 @@ def show_bird(bird_id):
     bird = crud.get_bird(bird_id)
 
     return render_template("bird_details.html", bird=bird)
+
+@app.route("/users", methods=["POST"])
+def register_user():
+    """Create a new user."""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    user = crud.get_user_by_email(email)
     
-@app.route("/test_answer")
+    if user:
+        flash("Cannot create an account with that email. Try again.")
+    else:
+        user = crud.create_user(email, password)
+        db.session.add(user)
+        db.session.commit()
+        flash("Account created! Please log in.")
+
+    return redirect("/")
+
+@app.route("/login", methods=["POST"])
+def process_login():
+    """Process user login."""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    user = crud.get_user_by_email(email)
+    if not user or user.password != password:
+        flash("The email or password you entered was incorrect.")
+        return redirect("/")
+    else:
+        # Log in user by storing the user's email in session
+        session["user_email"] = user.email
+        flash(f"Welcome back, {user.email}!")
+
+        return redirect("/game")
+
+@app.route("/users/<user_id>")
+def show_user(user_id):
+    """Show details on a particular user."""
+
+    user = crud.get_user_by_id(user_id)
+
+    return render_template("user_details.html", user=user)
+    
+@app.route("/game")
 def test_answer():
-    answer = crud.get_answer(date.today())
-    return answer
+    bird = crud.get_full_answer(date.today())
+    return render_template("game.html", bird=bird)
+
+@app.route("/submit-guess")
+def check_answer():
+    """Checks if user's guess is correct."""
+
+    user_guess = request.args.get("guess")
+    answer = crud.get_full_answer(date.today())
+    correct_guess = user_guess == answer
+    logged_in_email = session.get("user_email")
+    user = crud.get_user_by_email(logged_in_email)
+    
+    create_guess = crud.create_guess(date.today(), user.user_id, correct_guess)
+   
+    db.session.add(create_guess)
+    db.session.commit()
+    
+    if correct_guess:
+        return "You did it! You guessed correctly!"
+    else:
+        return "You didn't get it, try again tomorrow."
+        
+
+    
 
 if __name__ == "__main__":
     connect_to_db(app)

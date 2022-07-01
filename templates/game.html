@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Today's Birdle{% endblock %}
+
+{% block body %}
+<h1>Today's Birdle</h1>
+
+<img src="{{ bird.bird_photo }}" height="500" alt="hopefully a bird">
+
+<h2>Guess what bird it is!</h2>
+    <form action="/submit-guess" method="POST">
+    <label for="guess">What bird is it?</label><br>
+    <input type="text" id="guess" name="guess">
+    </form>
+<p>
+    <button type="submit" id="submit-guess">Submit your guess!</button>
+</p>
+
+<p id="guess">
+</p>
+
+<script src="/static/js/birdle.js"></script>
+
+{% endblock %}
+

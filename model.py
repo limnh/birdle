@@ -2,6 +2,7 @@
 
 from datetime import date
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import ForeignKey
 
 db = SQLAlchemy()
 
@@ -20,28 +21,36 @@ class Bird(db.Model):
     bird_photo = db.Column(db.String)
     # bird_call = db.Column(db.String)
     
-    # answers = a list of Answer objects
+    # A list of Answer objects
 
     def __repr__(self):
         return f"<Bird bird_id={self.bird_id}, com_name={self.com_name}>"
 
 
-class Answer(db.Model):
-    """An answer."""
+class Guess(db.Model):
+    """A guess from the user."""
 
-    __tablename__ = "answers"
+    __tablename__ = "guesses"
 
-    date = db.Column(db.Date, primary_key=True)
-    bird_id = db.Column(db.Integer, db.ForeignKey("birds.bird_id"))
+    guess_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    date = db.Column(db.Date)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-    correct_answer = db.Column(db.Boolean)
-
-    bird = db.relationship("Bird", backref="answers")
+    correct_guess = db.Column(db.Boolean)
     
     # user = a single User object
 
     def __repr__(self):
-        return f"<Answer date={self.date}, bird_id={self.bird_id}>"
+        return f"<Guess date={self.date}, bird_id={self.bird_id}>"
+    
+class Answer(db.Model):
+    """An answer for bird of the day."""
+    
+    __tablename__ = "answers"
+    
+    date = db.Column(db.Date, primary_key=True)
+    bird_id = db.Column(db.Integer, db.ForeignKey("birds.bird_id"))
+    
+    bird = db.relationship("Bird", backref="answers")
 
 
 class User(db.Model):
@@ -54,13 +63,13 @@ class User(db.Model):
     email = db.Column(db.String, nullable=False, unique=True)
     streak = db.Column(db.Integer)
 
-    answers = db.relationship("Answer", backref="user")
+    guesses = db.relationship("Guess", backref="user")
 
     def __repr__(self):
         return f"<User user_id={self.user_id} email={self.email}>"
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///birds", echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///birds', echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

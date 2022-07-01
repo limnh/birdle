@@ -3,8 +3,9 @@
 
 {% block body %}
 <h1>
-    __(.)< __(.)> __(.)=<br>
-    \___)  \___)  \___)<br>
+    __(.)<  __(.)>  __(.)= <br>
+    \___)   \___)   \___) <br>
+    <br>
     Birdle
 </h1>
 
@@ -20,6 +21,22 @@
 
   <p>
     <button type="submit">Log In</button>
+
+  </p>
+</form>
+
+<h2>Create an Account</h2>
+<form action="/users" method="POST">
+  <p>
+    Email <input type="text" name="email">
+  </p>
+
+  <p>
+    Password <input type="password" name="password">
+  </p>
+
+  <p>
+      <button type="submit">Create an account</button>
 
   </p>
 </form>
