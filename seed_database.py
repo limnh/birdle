@@ -2,6 +2,7 @@
 
 import os
 import json
+import random
 from random import choice, randint
 from datetime import datetime, date
 
@@ -38,19 +39,8 @@ for bird in bird_data:
 
 model.db.session.add_all(birds_in_db)
 
-db_answer = crud.create_answer(3, date.today())
+selection = random.randint(0, len(bird_data))
+db_answer = crud.create_answer(selection, date.today())
 model.db.session.add(db_answer)
     
 model.db.session.commit()
-
-
-
-# Create 10 users
-#for n in range(10):
- #   email = f"user{n}@test.com"  # Voila! A unique email!
-  #  password = "test"
-#
- #   user = crud.create_user(email, password)
-  #  model.db.session.add(user)
-
-# model.db.session.commit()

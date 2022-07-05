@@ -15,7 +15,7 @@ button.addEventListener('click', () => {
   .then((response) => response.text())
   .then((serverData) => {
     console.log(serverData)
-    document.querySelector('#guess').innerHTML = serverData;
+    document.querySelector('#guess-form').innerHTML = serverData;
   }); 
 });
 

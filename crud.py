@@ -65,6 +65,7 @@ def get_user_guesses(date, user_id):
     """Get the number of guesses a user has made each day."""
     
     user_guesses = Guess.query.filter(Guess.user_id == user_id, Guess.date == date).count()
+    
     return user_guesses
     
 

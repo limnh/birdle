@@ -78,6 +78,7 @@ def show_user(user_id):
 @app.route("/game")
 def test_answer():
     bird = crud.get_full_answer(date.today())
+    print("Today's bird is", bird)
     return render_template("game.html", bird=bird)
 
 @app.route("/submit-guess")
@@ -85,20 +86,23 @@ def check_answer():
     """Checks if user's guess is correct."""
 
     user_guess = request.args.get("guess")
+    print("user_guess:", user_guess)
     answer = crud.get_full_answer(date.today())
-    correct_guess = user_guess == answer
+    correct_guess = user_guess == answer.com_name
     logged_in_email = session.get("user_email")
     user = crud.get_user_by_email(logged_in_email)
     
-    create_guess = crud.create_guess(date.today(), user.user_id, correct_guess)
-   
-    db.session.add(create_guess)
-    db.session.commit()
+    if crud.get_user_guesses(date.today(), user.user_id) >= 1000:
+        return {"state": "game-over"}
+    else:
+        create_guess = crud.create_guess(date.today(), user.user_id, correct_guess)
+        db.session.add(create_guess)
+        db.session.commit()
     
     if correct_guess:
-        return "You did it! You guessed correctly!"
+        return {"state": "correct"}
     else:
-        return "You didn't get it, try again tomorrow."
+        return {"state": "incorrect"}
         
 
     
