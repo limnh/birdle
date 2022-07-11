@@ -39,7 +39,7 @@ for bird in bird_data:
 
 model.db.session.add_all(birds_in_db)
 
-selection = random.randint(0, len(bird_data))
+selection = random.randint(1, len(bird_data))
 db_answer = crud.create_answer(selection, date.today())
 model.db.session.add(db_answer)
     

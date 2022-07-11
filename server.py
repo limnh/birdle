@@ -126,9 +126,17 @@ def check_answer():
     }
     
     if is_correct:
-        return resp | {"status": "You named the bird correctly!"}
+        return resp | {"status": f"You named the bird correctly! You've got it in {num_guesses} guesses."}
     else:
-        return resp | {"status": f"You didn't get it correct. You've used {num_guesses} guesses!"}
+        return resp | {"status": f"You didn't get it correct. You've used {num_guesses} guesses."}
+    
+    
+app.route("/logout")
+def process_logout():
+    """Log user out and clear the session."""
+
+    del session["user_email"]
+    return redirect("/")
         
 
 if __name__ == "__main__":
