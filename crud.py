@@ -1,6 +1,7 @@
 """CRUD operations."""
 
 from model import db, Bird, Answer, User, Guess, connect_to_db
+from sqlalchemy import select
 
 
 def create_bird(sci_name, com_name, order, family_com_name, family_sci_name, bird_photo):
@@ -16,9 +17,16 @@ def get_all_birds():
     return Bird.query.all()
 
 def get_bird(bird_id):
-    """Return a bird's common name."""
+    """Return a bird's bird ID."""
 
     return Bird.query.get(bird_id)
+
+def get_bird_by_name(com_name):
+    """Return a bird's common name."""
+    print("in get_bird_by_name")
+    resp = Bird.query.filter(Bird.com_name == com_name).first()
+    print("resp", resp)
+    return resp
 
 def get_answer(date):
     """Returns answer for given date."""
@@ -64,7 +72,7 @@ def create_guess(date, user_id, correct_guess):
 def get_user_guesses(date, user_id):
     """Get the number of guesses a user has made each day."""
     
-    user_guesses = Guess.query.filter(Guess.user_id == user_id, Guess.date == date).count()
+    user_guesses = Guess.query.filter(Guess.user_id == user_id, Guess.date == date).count()+1
     
     return user_guesses
     

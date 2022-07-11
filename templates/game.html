@@ -5,23 +5,31 @@
 {% block body %}
 <h1>Today's Birdle</h1>
 
+<link rel="stylesheet" href="static/css/site.css">
+
 <img src="{{ bird.bird_photo }}" height="500" alt="hopefully a bird">
 
 <h2>Guess what bird it is!</h2>
-    <form action="/submit-guess" method="POST">
-    <label for="guess">What bird is it?</label><br>
-    <input type="text" id="guess" name="guess">
-    </form>
+
+<div>
+  <div class="box" id="order1"></div>
+  <div class="box" id="family1"></div>
+  <div class="box" id="comname1"></div>
+</div>
+
+<form action="/submit-guess" method="POST">
+  <label for="guess">What bird is it?</label><br>
+  <input type="text" id="guess" name="guess">
+</form>
 <p>
-    <button type="submit" id="submit-guess">Submit your guess!</button>
+  <button type="submit" id="submit-guess">Submit your guess!</button>
 </p>
 
 <form id="guess-form">
-    <div class="form-group">
-    </div>
-  </form>
+  <div class="form-group">
+  </div>
+</form>
 
 <script src="/static/js/birdle.js"></script>
 
 {% endblock %}
-

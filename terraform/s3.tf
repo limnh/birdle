@@ -4,5 +4,5 @@ resource "aws_s3_bucket" "birdle" {
 
 resource "aws_s3_bucket_acl" "birdle" {
   bucket = aws_s3_bucket.birdle.id
-  acl    = "private"
+  acl    = "public-read"
 }

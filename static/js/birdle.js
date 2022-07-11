@@ -18,11 +18,3 @@ button.addEventListener('click', () => {
     document.querySelector('#guess-form').innerHTML = serverData;
   }); 
 });
-
-const handleWrongGuess = () => {
-  numWrong += 1;
-
-  if (numWrong === 5) {
-    alert('Too many guesses. Try again tomorrow.')
-  }
-};

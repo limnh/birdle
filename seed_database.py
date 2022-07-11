@@ -24,6 +24,7 @@ with open("data/testbirds.json") as f:
 # to create fake entries
 birds_in_db = []
 for bird in bird_data:
+    continue
     sci_name, com_name, order, family_com_name, family_sci_name, bird_photo = (
         bird["sci_name"],
         bird["com_name"],
@@ -32,7 +33,6 @@ for bird in bird_data:
         bird["family_sci_name"],
         bird["bird_photo"]
     )
-    # release_date = datetime.strptime(movie["release_date"], "%Y-%m-%d")
 
     db_bird = crud.create_bird(sci_name, com_name, order, family_com_name, family_sci_name, bird_photo)
     birds_in_db.append(db_bird)

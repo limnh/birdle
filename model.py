@@ -49,9 +49,6 @@ class Answer(db.Model):
     
     date = db.Column(db.Date, primary_key=True)
     bird_id = db.Column(db.Integer, db.ForeignKey("birds.bird_id"))
-    
-    bird = db.relationship("Bird", backref="answers")
-
 
 class User(db.Model):
     """A user."""
