@@ -126,7 +126,7 @@ def check_answer():
     }
     
     if is_correct:
-        return resp | {"status": f"You named the bird correctly! You've got it in {num_guesses} guesses."}
+        return resp | {"status": f"You named the bird correctly! You got it in {num_guesses} guesses."}
     else:
         return resp | {"status": f"You didn't get it correct. You've used {num_guesses} guesses."}
     

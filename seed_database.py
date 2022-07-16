@@ -24,7 +24,6 @@ with open("data/testbirds.json") as f:
 # to create fake entries
 birds_in_db = []
 for bird in bird_data:
-    continue
     sci_name, com_name, order, family_com_name, family_sci_name, bird_photo = (
         bird["sci_name"],
         bird["com_name"],
@@ -38,6 +37,7 @@ for bird in bird_data:
     birds_in_db.append(db_bird)
 
 model.db.session.add_all(birds_in_db)
+model.db.session.commit()
 
 selection = random.randint(1, len(bird_data))
 db_answer = crud.create_answer(selection, date.today())

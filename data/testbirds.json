@@ -69,5 +69,53 @@
     "family_com_name": "Barn-Owls",
     "family_sci_name": "Tytonidae",
     "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tyto_alba_-British_Wildlife_Centre%2C_Surrey%2C_England-8a_%281%29.jpg/1024px-Tyto_alba_-British_Wildlife_Centre%2C_Surrey%2C_England-8a_%281%29.jpg"
+},
+{
+    "sci_name": "Gymnogyps californianus",
+    "com_name": "California Condor",
+    "order": "Cathartiformes",
+    "family_com_name": "New World Vultures",
+    "family_sci_name": "Cathartidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gymnogyps_californianus_-San_Diego_Zoo-8a.jpg/520px-Gymnogyps_californianus_-San_Diego_Zoo-8a.jpg"
+},
+{
+    "sci_name": "Branta canadensis",
+    "com_name": "Canada Goose",
+    "order": "Anseriformes",
+    "family_com_name": "Ducks, Geese, and Waterfowl",
+    "family_sci_name": "Anatidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Canada_goose_on_Seedskadee_NWR_%2827826185489%29.jpg/440px-Canada_goose_on_Seedskadee_NWR_%2827826185489%29.jpg"
+},
+{
+    "sci_name": "Raphus cucullatus",
+    "com_name": "Dodo",
+    "order": "Columbiformes",
+    "family_com_name": "Pigeons and Doves",
+    "family_sci_name": "Columbidae",
+    "bird_photo": "https://en.wikipedia.org/wiki/File:Dronte_17th_Century_color_corrected.jpg"
+},
+{
+    "sci_name": "Alcedo atthis",
+    "com_name": "Common Kingfisher",
+    "order": "Coraciiformes",
+    "family_com_name": "Kingfishers",
+    "family_sci_name": "Alcedinidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/%E2%99%82_Common_Kingfisher_%28Alcedo_atthis%29_Photograph_By_Shantanu_Kuveskar%2C_Mangaon%2C_Maharashtra%2C_India.jpg/440px-%E2%99%82_Common_Kingfisher_%28Alcedo_atthis%29_Photograph_By_Shantanu_Kuveskar%2C_Mangaon%2C_Maharashtra%2C_India.jpg"
+},
+{
+    "sci_name": "Falco sparverius",
+    "com_name": "American Kestrel",
+    "order": "Falconiformes",
+    "family_com_name": "Falcons and Caracaras",
+    "family_sci_name": "Falconidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/AmericanKestrel02.jpg/440px-AmericanKestrel02.jpg"
+},
+{
+    "sci_name": "Athene cunicularia",
+    "com_name": "Burrowing Owl",
+    "order": "Strigiformes",
+    "family_com_name": "Owls",
+    "family_sci_name": "Strigidae",
+    "bird_photo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Brazilian_burrowing_owl_%28Athene_cunicularia_grallaria%29.jpg"
 }
 ]

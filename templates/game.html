@@ -3,31 +3,31 @@
 {% block title %}Today's Birdle{% endblock %}
 
 {% block body %}
-<h1>Today's Birdle</h1>
+<h1 class="center">Today's Birdle</h1>
 
 <link rel="stylesheet" href="static/css/site.css">
 
-<img src="{{ bird.bird_photo }}" height="500" alt="hopefully a bird">
+<img class="center" src="{{ bird.bird_photo }}" height="500" alt="hopefully a bird">
 
-<h2>Guess what bird it is!</h2>
+<h2 class="center">Guess what bird it is!</h2>
 
-<div>
-  <div class="box" id="order1"></div>
-  <div class="box" id="family1"></div>
-  <div class="box" id="comname1"></div>
+<div class="center">
+  <div class="box" id="order" title="Order"></div>
+  <div class="box" id="family" title="Family"></div>
+  <div class="box" id="comname" title="Common Name"></div>
 </div>
 
-<form action="/submit-guess" method="POST">
+<form action="/submit-guess" method="POST" class="center">
   <label for="guess">What bird is it?</label><br>
   <input type="text" id="guess" name="guess">
 </form>
 
 <p>
-  <button type="submit" id="submit-guess">Submit your guess!</button>
+  <button class="center" type="submit" id="submit-guess">Submit your guess!</button>
 </p>
 
-<form id="guess-form">
-  <div class="form-group">
+<form class="center" id="guess-form">
+  <div class="center" class="form-group">
   </div>
 </form>
 
