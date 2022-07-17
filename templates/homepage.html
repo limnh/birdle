@@ -2,48 +2,42 @@
 {% block title %}Birdle{% endblock %}
 
 {% block body %}
-<h1>
-    __(.)<  __(.)>  __(.)= <br>
-    \___)   \___)   \___) <br>
-    <br>
-    Birdle
+
+<link rel="stylesheet" href="static/css/site.css">
+
+<h1 class="center" style="font-family:arial">B I R D L E<br/>
+  ___(.)<<br>
+  \__)<br>
+  <br>
 </h1>
 
-<h2>Log In</h2>
-<form action="/login" method="POST">
-  <p>
-    Email <input type="text" name="email">
-  </p>
+<div class="center">
+  <h2>Log In</h2>
+  <form action="/login" method="POST">
+    <p style="display:inline">
+      Email <input type="text" name="email">
+    </p>
+    <p style="display:inline">
+      Password <input type="password" name="password">
+    </p>
+    <p style="display:inline">
+      <button type="submit">Log In</button>
+    </p>
+  </form>
+</div>
 
-  <p>
-    Password <input type="password" name="password">
-  </p>
-
-  <p>
-    <button type="submit">Log In</button>
-
-  </p>
-</form>
-
-<h2>Create an Account</h2>
-<form action="/users" method="POST">
-  <p>
-    Email <input type="text" name="email">
-  </p>
-
-  <p>
-    Password <input type="password" name="password">
-  </p>
-
-  <p>
-      <button type="submit">Create an account</button>
-
-  </p>
-</form>
-<h2>Log Out</h2>
-<form action="/logout">
-  <p>
-    <button type="submit">Log out</button>
-  </p>
-</form>
+<div class="center">
+  <h2>Create an Account</h2>
+  <form action="/users" method="POST">
+    <p style="display:inline">
+      Email <input type="text" name="email">
+    </p>
+    <p style="display:inline">
+      Password <input type="password" name="password">
+    </p>
+    <p style="display:inline">
+        <button type="submit">Create an account</button>
+    </p>
+  </form>
+</div>
 {% endblock %}

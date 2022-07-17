@@ -3,6 +3,10 @@
 {% block title %}Today's Birdle{% endblock %}
 
 {% block body %}
+
+<form action="/logout">
+  <button type="submit">Log out</button>
+</form>
 <h1 class="center">Today's Birdle</h1>
 
 <link rel="stylesheet" href="static/css/site.css">
@@ -17,19 +21,14 @@
   <div class="box" id="comname" title="Common Name"></div>
 </div>
 
-<form action="/submit-guess" method="POST" class="center">
-  <label for="guess">What bird is it?</label><br>
-  <input type="text" id="guess" name="guess">
-</form>
+<div class="center">
+  <form action="/submit-guess" style="display:inline" method="POST" class="center">
+    <input type="text" id="guess" name="guess" placeholder="What bird is it?">
+  </form>
 
-<p>
-  <button class="center" type="submit" id="submit-guess">Submit your guess!</button>
-</p>
-
-<form class="center" id="guess-form">
-  <div class="center" class="form-group">
-  </div>
-</form>
+  <button style="display:inline" type="submit" id="submit-guess">Submit</button>
+  <form style="display:inline" id="guess-form"></form>
+</div>
 
 <script src="/static/js/birdle.js"></script>
 

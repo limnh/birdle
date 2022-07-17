@@ -131,7 +131,7 @@ def check_answer():
         return resp | {"status": f"You didn't get it correct. You've used {num_guesses} guesses."}
     
     
-app.route("/logout")
+@app.route("/logout")
 def process_logout():
     """Log user out and clear the session."""
 
